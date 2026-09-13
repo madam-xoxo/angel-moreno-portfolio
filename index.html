@@ -745,8 +745,12 @@ footer p {
     }
     .contact-box {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 32px;
         padding: 35px;
+    }
+
+    .contact-box h2 {
+        max-width: 520px;
     }
 }
 @media(max-width:500px) {
@@ -835,8 +839,10 @@ footer p {
         <div class="hero-image">
             <div class="photo-frame">
                 <div class="photo-placeholder">
-                    <span class="initials">AM</span>
-                    <p>ANGEL MAY MORENO</p>
+                    <img src="images/profile.jpg" alt="Portrait of Angel May Moreno"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.nextElementSibling.nextElementSibling.style.display='block';">
+                    <span class="initials" style="display:none;">AM</span>
+                    <p style="display:none;">ANGEL MAY MORENO</p>
                 </div>
             </div>
             <div class="floating-card one">
