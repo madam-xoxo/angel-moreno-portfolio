@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Angel May Moreno | </title>
+<title>Angel May Moreno | Portfolio</title>
+<meta name="description" content="Portfolio of Angel May Moreno — Computer Science student from Basilan Province.">
+<link rel="icon" href="images/profile.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="images/profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -62,6 +64,8 @@ button {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Header */
 header {
     position: fixed;
     top: 0;
@@ -125,6 +129,8 @@ header.scrolled {
     font-size: 25px;
     color: var(--text);
 }
+
+/* Hero – following your original spacing */
 .hero {
     min-height: 750px;
     padding: 160px 0 110px;
@@ -323,6 +329,8 @@ header.scrolled {
     color: var(--muted);
     font-size: 11px;
 }
+
+/* Sections */
 .section {
     padding: 105px 0;
 }
@@ -349,6 +357,8 @@ header.scrolled {
     color: var(--muted);
     font-size: 14px;
 }
+
+/* About */
 .about {
     background: #fffafb;
 }
@@ -441,8 +451,67 @@ header.scrolled {
     font-size: 13px;
     font-weight: 600;
 }
-.skills {
+
+/* Education */
+.education {
     background: white;
+}
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.edu-card {
+    background: #fffafb;
+    border: 1px solid var(--pink-border);
+    border-radius: 20px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.edu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-color: #efabc5;
+}
+.edu-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--pink);
+}
+.edu-year {
+    display: inline-block;
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+.edu-card h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+.edu-card .school {
+    color: var(--pink);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.edu-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Skills */
+.skills {
+    background: #fffafb;
 }
 .skills-grid {
     display: grid;
@@ -453,6 +522,7 @@ header.scrolled {
     padding: 30px 25px;
     border: 1px solid var(--pink-border);
     border-radius: 20px;
+    background: white;
     transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 }
 .skill-card:hover {
@@ -483,8 +553,10 @@ header.scrolled {
     color: var(--muted);
     font-size: 13px;
 }
+
+/* Projects */
 .projects {
-    background: #fffafb;
+    background: white;
 }
 .project-grid {
     display: grid;
@@ -543,67 +615,97 @@ header.scrolled {
 .project-link:hover {
     letter-spacing: .5px;
 }
+/* ===================== CONTACT ===================== */
 .contact {
-    background: white;
+    background: #fffafb;
 }
+
 .contact-box {
-    background: linear-gradient(135deg,#fff0f5,#fff8fa);
+    background: linear-gradient(135deg, #fff0f5, #fff8fa);
     border: 1px solid var(--pink-border);
     border-radius: 25px;
     padding: 55px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 55px;
+    align-items: start;
 }
+
 .contact-box h2 {
-    font-family: "Playfair Display",serif;
-    font-size: 38px;
-    line-height: 1.2;
-    margin-bottom: 18px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(26px, 4vw, 38px);
+    line-height: 1.25;
+    margin-bottom: 16px;
 }
-.contact-box p {
+
+.contact-box > div > p {
     color: var(--muted);
     font-size: 14px;
+    margin-bottom: 0;
 }
+
 .contact-details {
     margin-top: 28px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
 }
+
 .contact-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 13px;
     font-size: 13px;
 }
+
 .contact-item span {
     width: 38px;
     height: 38px;
+    min-width: 38px;
     background: white;
     border: 1px solid var(--pink-border);
     border-radius: 12px;
     display: grid;
     place-items: center;
     color: var(--pink);
+    flex-shrink: 0;
 }
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.contact-item p {
+    color: var(--muted);
+    word-break: break-word;          /* important for long email */
+    overflow-wrap: anywhere;
+}
+
+/* Form */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    min-width: 0;                    /* prevents grid blowout */
+    width: 100%;
 }
+
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 7px;
 }
+
 .form-group label {
     font-size: 12px;
     font-weight: 700;
 }
+
 .form-group input,
 .form-group textarea {
     width: 100%;
+    max-width: 100%;
     padding: 13px 15px;
     border: 1px solid var(--pink-border);
     border-radius: 10px;
@@ -612,19 +714,103 @@ header.scrolled {
     outline: none;
     resize: vertical;
     transition: border-color .3s ease, box-shadow .3s ease;
+    box-sizing: border-box;
 }
+
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--pink);
-    box-shadow: 0 0 0 3px rgba(232,93,145,.08);
+    box-shadow: 0 0 0 3px rgba(232, 93, 145, .08);
 }
+
 .form-group textarea {
-    min-height: 105px;
+    min-height: 110px;
 }
+
+.contact-form .btn {
+    width: 100%;                     /* full width on mobile feels better */
+    max-width: 100%;
+    margin-top: 4px;
+}
+
 #formMessage {
     font-size: 12px;
     color: var(--pink-dark);
+    min-height: 18px;
 }
+
+/* ========== RESPONSIVE CONTACT ========== */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .contact-box {
+        gap: 40px;
+        padding: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .contact-box {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 24px;
+    }
+
+    .contact-box h2 {
+        font-size: 28px;
+    }
+
+    .contact-details {
+        margin-top: 22px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .contact-box {
+        padding: 24px 18px;
+        border-radius: 20px;
+        gap: 28px;
+    }
+
+    .contact-box h2 {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .contact-item {
+        gap: 11px;
+    }
+
+    .contact-item span {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 15px;             
+    }
+
+    .contact-form .btn {
+        padding: 14px 20px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .contact-box {
+        padding: 20px 16px;
+    }
+
+    .contact-box h2 {
+        font-size: 22px;
+    }
+}/* Footer */
 footer {
     padding: 28px 0;
     border-top: 1px solid var(--pink-border);
@@ -661,6 +847,8 @@ footer p {
     color: white;
     transform: translateY(-3px);
 }
+
+/* Animations */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(25px); }
     to { opacity: 1; transform: translateY(0); }
@@ -684,7 +872,9 @@ footer p {
     0%,100% { opacity: .5; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.15); }
 }
-@media(max-width:850px) {
+
+/* ===== RESPONSIVE – based on your original ===== */
+@media (max-width: 850px) {
     .nav-links {
         position: absolute;
         top: 80px;
@@ -713,8 +903,10 @@ footer p {
     .menu-toggle {
         display: block;
     }
+
     .hero {
-        padding-top: 135px;
+        padding: 140px 0 90px;
+        min-height: auto;
     }
     .hero-grid {
         grid-template-columns: 1fr;
@@ -739,6 +931,9 @@ footer p {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
     .skills-grid,
     .project-grid {
         grid-template-columns: repeat(2,1fr);
@@ -748,15 +943,15 @@ footer p {
         gap: 32px;
         padding: 35px;
     }
-
     .contact-box h2 {
         max-width: 520px;
+        font-size: 32px;
     }
 }
-@media(max-width:500px) {
+
+@media (max-width: 500px) {
     .hero {
-        padding-top: 120px;
-        padding-bottom: 75px;
+        padding: 130px 0 75px;
     }
     .section {
         padding: 75px 0;
@@ -784,17 +979,34 @@ footer p {
         min-height: 300px;
     }
     .contact-box {
-        padding: 25px;
+        padding: 25px 20px;
     }
     .contact-box h2 {
-        font-size: 31px;
+        font-size: 28px;
     }
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
+    .photo-frame {
+        max-width: 320px;
+    }
 }
-@media(prefers-reduced-motion:reduce) {
+
+@media (max-width: 380px) {
+    .floating-card {
+        display: none;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
@@ -817,6 +1029,7 @@ footer p {
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact" class="nav-btn">Let's Talk ↗</a></li>
@@ -879,7 +1092,7 @@ footer p {
             </div>
             <div class="about-content reveal">
                 <h3>Turning ideas into reality.</h3>
-                <p>I'm Angel May Fernande Moreno, a Computer Science student from Basilan Province. I enjoy exploring technology and discovering new ways to create useful and beautiful digital solutions.</p>
+                <p>I'm Angel May Fernandez Moreno, a Computer Science student from Basilan Province. I enjoy exploring technology and discovering new ways to create useful and beautiful digital solutions.</p>
                 <p>My journey in programming is driven by curiosity, creativity, and a desire to keep improving. I believe every challenge is an opportunity to learn something new.</p>
                 <div class="info-list">
                     <div class="info-item">
@@ -900,6 +1113,30 @@ footer p {
                     </div>
                 </div>
                 <a href="#contact" class="btn btn-primary">Work With Me ↗</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section education" id="education">
+    <div class="container">
+        <div class="section-heading reveal">
+            <div class="section-tag">My path</div>
+            <h2>Education & Learning</h2>
+            <p>Where my curiosity meets formal learning and continuous growth.</p>
+        </div>
+        <div class="edu-grid">
+            <div class="edu-card reveal">
+                <span class="edu-year">Present</span>
+                <h3>Bachelor of Science in Computer Science</h3>
+                <div class="school">College / University</div>
+                <p>Currently pursuing my degree with a focus on programming, web development, and problem-solving. Building a strong foundation in both theory and practical projects.</p>
+            </div>
+            <div class="edu-card reveal">
+                <span class="edu-year">Ongoing</span>
+                <h3>Self-Learning & Exploration</h3>
+                <div class="school">Personal Projects & Online Resources</div>
+                <p>Actively learning modern web technologies, improving my coding skills, and experimenting with new tools and frameworks through personal projects and continuous practice.</p>
             </div>
         </div>
     </div>
@@ -998,15 +1235,15 @@ footer p {
             <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="name">
                 </div>
                 <div class="form-group">
                     <label for="email">Your Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email">
                 </div>
                 <div class="form-group">
                     <label for="message">Your Message</label>
-                    <textarea id="message" placeholder="Write your message..." required></textarea>
+                    <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message ↗</button>
                 <p id="formMessage" aria-live="polite"></p>
@@ -1060,7 +1297,6 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 
 const revealElements = document.querySelectorAll(".reveal");
-
 const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
