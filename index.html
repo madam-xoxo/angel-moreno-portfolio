@@ -872,7 +872,85 @@ footer p {
     0%,100% { opacity: .5; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.15); }
 }
+/* ===================== LOADING SCREEN ===================== */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff 30%, #fff1f6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+}
 
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    text-align: center;
+    animation: fadeUp 0.8s ease both;
+}
+
+.loader-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #292329;
+    margin-bottom: 32px;
+    letter-spacing: -1.5px;
+}
+
+.loader-logo span {
+    color: #e85d91;
+}
+
+.loader-spinner {
+    width: 52px;
+    height: 52px;
+    border: 3px solid #ffe1ed;
+    border-top-color: #e85d91;
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    animation: spin 0.85s linear infinite;
+}
+
+.loader-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: #c83f73;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.loader-subtext {
+    font-size: 12px;
+    color: #887b84;
+    letter-spacing: 0.3px;
+    opacity: 0.85;
+}
+
+/* Animations */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* ===== RESPONSIVE – based on your original ===== */
 @media (max-width: 850px) {
     .nav-links {
@@ -1021,7 +1099,15 @@ footer p {
 </style>
 </head>
 <body>
-
+<!-- Loading Screen -->
+<div id="loader">
+    <div class="loader-content">
+        <div class="loader-logo">Angel<span>.</span></div>
+        <div class="loader-spinner"></div>
+        <p class="loader-text">Loading Angel’s world...</p>
+        <p class="loader-subtext">Preparing something beautiful</p>
+    </div>
+</div>
 <header id="header">
     <div class="container navbar">
         <a href="#home" class="logo">Angel<span>.</span></a>
@@ -1315,6 +1401,19 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     const formMessage = document.getElementById("formMessage");
     formMessage.textContent = "Thank you for your message! Connect this form to a backend or email service to receive messages.";
     this.reset();
+});
+
+// Loading Screen - 3 seconds
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+        loader.classList.add("hidden");
+
+        setTimeout(() => {
+            loader.remove();
+        }, 700);
+    }, 2300);
 });
 </script>
 </body>
